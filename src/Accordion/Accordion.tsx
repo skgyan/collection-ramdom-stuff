@@ -1,4 +1,35 @@
-import React from "react";
+import React, { useState } from "react"; 
+import Questions from "../data";
+import './style.css';
+
+const AccordionConainer = () => {
+  const [openAccordion, setOpenAccordion] = useState<string|number>('');
+
+  const toggle = (id: string | number) => {
+    console.log(id);
+    if (openAccordion === id) {
+      setOpenAccordion('');
+    } else {
+      setOpenAccordion(id);
+    }
+  };
+
+  return (<div>
+    Accordion
+    {Questions.map((question) => {
+      return (
+        <Accordion
+          key={question.id}
+          id={question.id}
+          title={question.title}
+          info={question.info}
+          openAccordion={openAccordion}
+          toggle={toggle}
+        />
+      )
+    })}
+  </div>);
+}
 
 const Accordion = ({
   id,
@@ -7,11 +38,11 @@ const Accordion = ({
   openAccordion,
   toggle,
 }: {
-  id: string;
+  id: string | number;
   title: string;
   info: string;  
-  openAccordion: string;
-  toggle: (id: string) => void;
+  openAccordion: string|number;
+  toggle: (id: string|number) => void;
 }) => {
     console.log('accordion render', id);
 
@@ -27,4 +58,4 @@ const Accordion = ({
   );
 };
 
-export default Accordion;
+export default AccordionConainer;

@@ -6,6 +6,7 @@ import Root from './routes/root.jsx'
 import App from './App.jsx'
 import AutoIncrementCounter from './Auto-Increment-Counter/Auto-Increment-Counter'
 import Autocomplete from './Autocomplete/Autocomplete'
+import CustomSyntheticEventComponent from './CustomSyntheticEvent/index.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:'/auto-complete',
         element: <Autocomplete />
+      },
+      {
+        path: '/custom-synthetic-event',
+        element: <CustomSyntheticEventComponent />
       }
     ]
   },

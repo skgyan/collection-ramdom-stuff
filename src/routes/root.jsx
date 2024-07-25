@@ -15,6 +15,9 @@ export default function Root() {
             <li>
               <a href={`/auto-complete`}>Auto Complete</a>
             </li>
+            <li>
+              <a href={`/custom-synthetic-event`}>Custom Synthetic Event</a>
+            </li>
           </ul>
         </nav>
       </div>
